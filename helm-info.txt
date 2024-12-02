@@ -1,0 +1,35 @@
+scenerio: Docker image run in kubernate via helm chart.
+
+1. Chart.yaml = commneted #appVersion: "1.16.0".
+2. value.yaml: need to add.
+repository: ashadeep/my-docker-repo
+3. templates/deployment.yaml: remove | default .Chart.AppVersion
+
+Commands: 
+#helm install name chartname
+#helm uninstall name
+#helm list -a
+#helm repo list
+#helm repo add repouirl
+#helm history app01 (check all revision)
+#helm upgrade web appache
+#helm rollback web 1
+
+#helm install my001 --dry-run --debug ./mywebapp
+#helm install db01 mydb --set env.MYSQL_DATABASE="wordpress_db" --set env.MYSQL_ROOT_PASSWORD="password"
+
+
+#mount -vvv 10.0.2.2:/volume ./foo (dignosting the error)
+
+NGINX Path: /usr/local/apache2/htdocs
+
+/usr/share/nginx/html
+
+#HPA 
+we can not use HPA for MYSQL databases.
+
+
+Minikube:
+ minikube addons list
+ minikube addons enable storage-provisioner,default-storageclass,ingress
+ 
